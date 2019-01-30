@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:controller="controllers.ConnectButton" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ConnectButton">
   <children>
-    <AnchorPane  maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="conna" layoutX="49.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="151.0" text="suka connect {&quot;_&quot;)" />
-            <TextField fx:id="port" layoutX="49.0" layoutY="94.0" onAction="#handleButtonClick" promptText="Port " />
-            <TextField fx:id="ip" layoutX="49.0" layoutY="47.0" onAction="#handleButtonClick" promptText="IP adress" />
+            <Button fx:id="conna" layoutX="50.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="27.0" prefWidth="151.0" text="suka connect {&quot;_&quot;)" />
+            <TextField fx:id="port" layoutX="49.0" layoutY="296.0" onAction="#handleButtonClick" promptText="Port " />
+            <TextField fx:id="gender" layoutX="49.0" layoutY="53.0" promptText="gender" />
+            <TextField fx:id="ip" layoutX="49.0" layoutY="254.0" onAction="#handleButtonClick" promptText="IP adress" />
+            <TextField fx:id="name" layoutX="49.0" layoutY="14.0" prefHeight="27.0" prefWidth="167.0" promptText="who are you?" />
+            <Slider fx:id="lvl" layoutX="80.0" layoutY="91.0" prefHeight="16.0" prefWidth="137.0" />
+            <Label layoutX="49.0" layoutY="90.0" prefHeight="17.0" prefWidth="126.0" text="LVL" />
+            <RadioButton fx:id="vegan" layoutX="49.0" layoutY="116.0" mnemonicParsing="false" text="vegan" />
+            <RadioButton fx:id="feminist" layoutX="50.0" layoutY="145.0" mnemonicParsing="false" text="feminist" />
+            <RadioButton fx:id="gluten_free" layoutX="149.0" layoutY="116.0" mnemonicParsing="false" text="gluten-free" />
+            <RadioButton fx:id="communist" layoutX="150.0" layoutY="145.0" mnemonicParsing="false" text="communist" />
+            <RadioButton fx:id="magic_girl" layoutX="50.0" layoutY="173.0" mnemonicParsing="false" text="magic girl" />
+            <RadioButton fx:id="on_drugs" layoutX="151.0" layoutY="173.0" mnemonicParsing="false" text="on drugs" />
+            <RadioButton layoutX="32.0" layoutY="218.0" mnemonicParsing="false" text="register?" />
+            <PasswordField layoutX="133.0" layoutY="214.0" prefHeight="27.0" prefWidth="84.0" promptText="password" />
       </children>
     </AnchorPane>
   </children>

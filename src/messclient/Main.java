@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package messclient;
 
 import controllers.MessagesUI;
@@ -31,10 +26,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException, InterruptedException {
        this.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/controllers/suka.fxml"));
+        
         Scene connectionScene = new Scene(root, 300, 600);
         connectionStage = new Stage();
         connectionStage.setTitle("SukaMessage");
         connectionStage.setScene(connectionScene);
+        connectionStage.setOnCloseRequest(e -> {
+            System.exit(0);
+        });
         connectionStage.showAndWait();
         
 
@@ -44,9 +43,14 @@ public class Main extends Application {
         Scene scene = new Scene(root, 500, 500);
         primaryStage.setTitle("messages.fxml");
         primaryStage.setScene(scene);
+        primaryStage.setOnCloseRequest(e -> {
+            try {
+                curConnection.socket.close();
+            } catch (IOException ex) {}
+            System.exit(0);
+        });
         primaryStage.show();
-                
-        mc = new MessageClient();
+        
         new T().start();
         
         
@@ -55,11 +59,8 @@ public class Main extends Application {
     
     class T extends Thread {
         
-
-       
         @Override
         public void run() {
-            mc = new MessageClient();
             try {
                 mc.run();
             } catch (IOException ex) {
@@ -68,10 +69,7 @@ public class Main extends Application {
         };
         
     }
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         launch(args);
     }

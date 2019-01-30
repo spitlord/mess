@@ -1,12 +1,10 @@
 package controllers;
 
-import java.awt.Toolkit;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import messclient.Main;
 import messclient.MessageClient;
 
 
